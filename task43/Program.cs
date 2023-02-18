@@ -11,11 +11,11 @@ string Input()
     return coefficient;
 }
 
-int[] Convert(string inputString)
+double[] Convert(string inputString)
 {
     string input_array = inputString.Replace(" ", ""); 
     string[] array = input_array.Split(",");
-    int[] out_array = new int[array.Length];
+    double[] out_array = new double[array.Length];
     for (int i = 0; i < array.Length; i++)
     {
         out_array[i] = int.Parse(array[i]);
@@ -24,7 +24,7 @@ int[] Convert(string inputString)
 
 }
 
-string Calculation(int[] parameter)
+string Calculation(double[] parameter)
 {
     string answer = "";
     if(parameter[0] == parameter[2])
@@ -36,9 +36,7 @@ string Calculation(int[] parameter)
     {
         double coordinateX =  (parameter[3] - parameter[1]) / (parameter[0] - parameter[2]);
         double coordinateY =  parameter[0] * coordinateX + parameter[1];
-        answer = ($"Координаты перемещения Х = {coordinateX}, Y = {coordinateY}");
-
-        Console.WriteLine($"вышло {coordinateX}, {coordinateY}");
+        answer = ($"Координаты пересечения: Х = {coordinateX}, Y = {coordinateY}");
     }
     return answer;
 }
@@ -48,7 +46,7 @@ void Main()
 {
     Console.Clear();
     string coef = Input();
-    int[] parameters = Convert(coef);
+    double[] parameters = Convert(coef);
     string result = Calculation(parameters);
     Console.WriteLine(result);
 }
