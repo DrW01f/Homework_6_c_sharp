@@ -11,9 +11,9 @@ string Input()
     return coefficient;
 }
 
-double[] Convert(string inputString)
+double[] Convert(string inputString) //перевод из строки в массив чисел
 {
-    string input_array = inputString.Replace(" ", ""); 
+    string input_array = inputString.Replace(" ", "");
     string[] array = input_array.Split(",");
     double[] out_array = new double[array.Length];
     for (int i = 0; i < array.Length; i++)
@@ -27,15 +27,15 @@ double[] Convert(string inputString)
 string Calculation(double[] parameter)
 {
     string answer = "";
-    if(parameter[0] == parameter[2])
+    if (parameter[0] == parameter[2])
     {
         if (parameter[1] == parameter[3]) answer = "Прямые совпадают";
         else answer = "Прямые не пересекуются";
     }
     else
     {
-        double coordinateX =  (parameter[3] - parameter[1]) / (parameter[0] - parameter[2]);
-        double coordinateY =  parameter[0] * coordinateX + parameter[1];
+        double coordinateX = (parameter[3] - parameter[1]) / (parameter[0] - parameter[2]);
+        double coordinateY = parameter[0] * coordinateX + parameter[1];
         answer = ($"Координаты пересечения: Х = {coordinateX}, Y = {coordinateY}");
     }
     return answer;

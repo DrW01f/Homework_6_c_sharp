@@ -6,11 +6,11 @@
 string[] Input()
 {
 
-    Console.Write("Введите количество чисел (больше 0):  "); 
-    string[] outFunc = {"0","0"};
+    Console.Write("Введите количество чисел (больше 0):  ");
+    string[] outFunc = { "0", "0" };
     outFunc[0] = Console.ReadLine()!;
     Console.WriteLine("Введите массив чисел через запятую, например: 1, -5, 3");
-    outFunc[1] = Console.ReadLine()!;    
+    outFunc[1] = Console.ReadLine()!;
     return outFunc;
 }
 
@@ -30,9 +30,9 @@ int[] Magic(string[] inputArray) //Преобразование строки в 
 int Counter(int[] array)
 {
     int result = 0;
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if(array[i] > 0) result += 1;
+        if (array[i] > 0) result += 1;
     }
     return result;
 }
